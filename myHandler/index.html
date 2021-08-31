@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Go Web Programming</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <form action="http://127.0.0.1:8000/process?hello=1&firstname=2" method="POST" enctype="multipart/form-data">
+        <input type="text" name="hello" value="3"/>
+        <input type="text" name="firstname" value="4"/>
+        <input type="file" name="upload">
+        <input type="submit"/>
+    </form>
+</body>
+</html>
