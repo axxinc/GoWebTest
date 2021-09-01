@@ -2,7 +2,6 @@ package main
 
 import (
 	"testing"
-	"time"
 )
 
 func TestDecode(t *testing.T) {
@@ -23,9 +22,21 @@ func TestEncode(t *testing.T) {
 	t.Skip("Skiping encoding for now")
 }
 
-func TestLongRunningTest(t *testing.T) {
-	if testing.Short() {
-		t.Skip("Skiping long-running test in short mode")
+// func TestLongRunningTest(t *testing.T) {
+// 	if testing.Short() {
+// 		t.Skip("Skiping long-running test in short mode")
+// 	}
+// 	time.Sleep(time.Second * 10)
+// }
+
+func BenchmarkDecode(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		decode("post.json")
 	}
-	time.Sleep(time.Second * 10)
+}
+
+func BenchmarkUnmarshal(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		unmarshal("post.json")
+	}
 }
