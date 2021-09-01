@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"net/http"
 	"path"
 	"strconv"
@@ -16,7 +15,6 @@ type Post struct {
 
 func handleGet(w http.ResponseWriter, r *http.Request) (err error) {
 	id, err := strconv.Atoi(path.Base(r.URL.Path))
-	fmt.Println(id)
 	if err != nil {
 		return
 	}
