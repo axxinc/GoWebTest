@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Tpye" content="text/html; charset=utf-8">
+        <title>Mosaic</title>
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta content="none" name="robots">
+        <link rel="stylesheet" href="/Data/goWebTest/mosaic/public/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="/Data/goWebTest/mosaic/public/css/font-awesome.min.css" type="text/css">
+        <script src="/Data/goWebTest/mosaic/public/js/jquery.min-1.9.1.js" type="text/javascript"></script>
+        <script src="/Data/goWebTest/mosaic/public/js/bootstrap.min.js" type="text/javascript"></script>
+        <!--[if it IE 9]>
+             <script src="/Data/goWebTest/mosaic/public/js/html5.js"></script>   
+        <![endif]-->
+        <style>
+            body {padding-top: 20px;}
+            p {font-size: 16px; line-height: 140%;}
+
+            .content {
+                background-color: #fff;
+                padding: 20px 50px 50px 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="col-md-6">
+                <img src="data:image/jpg;base64,{{ .original }}" width="100%">
+                <div class="lead">Original</div>
+            </div>
+            <div class="col-md-6">
+                <img src="data:image/jpg;base64,{{ .mosaic }}" width="100%">
+                <div class="lead">Mosaic - {{ .duration }}</div>
+            </div>
+            <div class="col-md-12 center">
+                <a class="btn btn-lg btn-info" href="/">Go Back</a>
+            </div>
+        </div>
+        <br>
+    </body>
+</html>
